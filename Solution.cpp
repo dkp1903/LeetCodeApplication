@@ -10,18 +10,21 @@
  
 class Solution {
 public:
-    void bstUtil(TreeNode* root,int &sum)
+    void summer(TreeNode* root,int &sum)
     {
-        if(!root) return;
-        bstUtil(root->right,sum);
+        //Base condition: Without this, the code would go into infinite recursion
+        if(!root) 
+           return;
+        summer(root->right,sum);
         sum+=root->val;
         root->val=sum;
-        bstUtil(root->left,sum);
+        summer(root->left,sum);
     }
+    //Initialiser function, which initialises sum and returns the updated tree.
     TreeNode* bstToGst(TreeNode* root) 
     {
         int sum=0;
-        bstUtil(root,sum);
+        summer(root,sum);
         return root;
     }
 };
