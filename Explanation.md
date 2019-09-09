@@ -37,5 +37,10 @@ Algorithm:
 * Initialise sum to 0. The present node is 4. We call the function summer with these parameters.
 * Since the root is not null, we recurse for 6,  7, 8.
 * After 8, root is null, therefore we return to the function call for 8. sum = 0 as of now.
-* We update sum to 8, and update the value of the node 8 to the value of sum. Since 8 is a leaf node, and thus, does not have a right child,
-its value remains unchanged.
+* We update sum to 8, and update the value of the node 8 to the value of sum. Since 8 is a leaf node, and thus, does not have a right child, its value remains unchanged.
+* We call the left child of 8, which is null, and we thus return. The function call for 8 ends. We head back to the function call of 7, with the updated sum value of 8.  The process repeats for all nodes, after which the function call returns and we get the updated tree.
+
+
+Time complexity is O(N), where N is the number of nodes.
+
+We are not using any extra space.
