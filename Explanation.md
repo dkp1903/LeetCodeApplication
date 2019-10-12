@@ -40,7 +40,8 @@ Algorithm:
 * We update sum to 8, and update the value of the node 8 to the value of sum. Since 8 is a leaf node, and thus, does not have a right child, its value remains unchanged.
 * We call the left child of 8, which is null, and we thus return. The function call for 8 ends. We head back to the function call of 7, with the updated sum value of 8.  The process repeats for all nodes, after which the function call returns and we get the updated tree.
 
-
+Even though we are using recursion, the tree is being traversed only a single time. 
 Time complexity is O(N), where N is the number of nodes.
 
-We are not using any extra space.
+We are not using any extra space here, but the same problem can also be solved using stack and inorder traversal.
+
